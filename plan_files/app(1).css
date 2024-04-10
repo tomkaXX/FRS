@@ -1,0 +1,419 @@
+.lds-circle {
+  display: inline-block;
+  transform: translateZ(1px);
+}
+.lds-circle > div {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  background: #00AA89;
+  animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes lds-circle {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    transform: rotateY(3600deg);
+  }
+}
+
+/* Customize the label (the container) */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #DDE0DD;
+  margin-top: 12px;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #DDE0DD;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #DDE0DD;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #00AA89;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.mt-20px{
+  margin-top: 20px;
+}
+.mt-40px{
+  margin-top: 40px;
+}
+.mt-80px{
+  margin-top: 80px;
+}
+
+.mt-50px{
+  margin-top: 50px;
+}
+.mt-100px{
+  margin-top: 100px;
+}
+.mb-10px{
+  margin-bottom: 10px;
+}
+.mb-20px{
+  margin-bottom: 20px;
+}
+.mb-60px{
+  margin-bottom: 60px;
+}
+.mb-80px{
+  margin-bottom: 80px;
+}
+
+#quickscan-form.flex{
+  padding: 0 40px;
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: calc(100vw - 80px);
+}
+#quickscan h4{
+  font-family: Montserrat,sans-serif;
+  color: #00A3DA;
+  font-size: 15px;
+  line-height: 1.5rem;
+  /* color: #009fe3; */
+  font-weight: 600;
+}
+#quickscan-sidebar{
+  max-width: 430px;
+  width: 100%;
+}
+
+#quickscan .bg-grey.boxed{
+  background-color: #DDE0DD;
+  max-width: 380px;
+  height: 100px;
+
+  position: relative;
+}
+#quickscan .boxed .img-target{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+#quickscan .bg-grey.boxed .row-content{
+  font-size: 13px;
+  font-weight: 600;
+  padding: 25px 40px 10px 110px;
+}
+#quickscan .img-zone{
+  position: absolute;
+  right: -43px;
+  top: -37px;
+}
+#quickscan-sidebar .main-content{
+  padding-left: 0px;
+  padding-right: 40px;
+  font-size: 14px;
+}
+
+#quickscan-main{
+  padding-left: 30px;
+  max-width: calc(100% - 430px);
+}
+.row-tabs{
+  padding-bottom: 40px;
+  position: relative;
+
+  overflow: hidden;
+  overflow-x: auto;
+}
+.dotted-line{
+  width: 100%;
+  height: 5px;
+  background-repeat:repeat-x;
+}
+
+.row-tabs ul{
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.row-tabs li{
+  display: inline-block;
+  flex: 1;
+}
+.row-tabs li a{
+  color: #FFFFFF;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 17px;
+  margin-right: 10px;
+  font-weight: 600;
+  position: relative;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+.row-tabs li a:hover{
+  background-color: #DDE0DD !important;
+  color: #0a0a0a;
+}
+.row-tabs li a:hover:before{
+  border-color: #DDE0DD transparent transparent transparent !important;
+}
+.row-tabs  li a.active:before{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 14px 0 14px;
+  left: 50%;
+  margin-left: -20px;
+  bottom: -30px;
+}
+
+.panel .flex{
+  display: flex;
+}
+.panel {
+  display: none;
+}
+.panel.active {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.panel .column{
+  font-size: 12px;
+}
+.panel .column .icon{
+  width: 45px;
+}
+.panel .column .icon img{
+  width: 100%;
+}
+.panel .column .col-3{
+  padding-left: 10px;
+  width: calc(100% - 100px);
+}
+
+.trigger{
+
+  border-radius: 20px;
+  background-color: #002944;
+  position: relative;
+  display: flex;
+  padding: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 0;
+  color: #fff;
+  align-items: center;
+}
+.trigger svg {
+  width: 40px;
+  transition-duration: .25s;
+  margin-left: 20px;
+}
+.trigger:hover{
+  background-color: #00A3DA;
+}
+.trigger:hover svg{
+  margin-left: 25px;
+}
+.trigger polygon{
+  fill: #002944;
+}
+.trigger:hover polygon{
+  fill: #00A3DA;
+}
+
+.trigger.top{
+  margin-left: auto;
+  margin-right: 20px;
+}
+.trigger:before{
+  content: "";
+  display: none !important;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 14px 0 14px 20px;
+  border-color: transparent transparent transparent #00AA89;
+  left: -35px;
+  top: 8px;
+}
+
+#loading{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+#loading.active{
+  display: flex;
+}
+
+#form-msg{
+  color: #ff0000;
+  text-align: right;
+  margin-right: 25px;
+  margin-top: 10px;
+}
+
+#quickscan-form,
+#download{
+  display: none;
+  padding: 0 40px;
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: calc(100vw - 80px);
+}
+#quickscan-form.active,
+#download.active{
+  display: block;
+}
+#download.active{
+  background: rgba(0,0,0,0.1);
+  padding: 50px 30px;
+  min-height: 300px;
+}
+#quickscan-form.active{
+  display: flex;
+}
+
+.content-msg{
+  display: block;
+  margin: 0 auto;
+  width: 600px;
+  min-height: 500px;
+}
+#download-link{
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.checked{
+  position: relative;
+  margin-right: 22px;
+}
+.checked:after{
+  left: 2px;
+  top: 1px;
+  width: 8px;
+  height: 15px;
+  border: solid #00AA89;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  content: "";
+  position: absolute;
+  display: inline-block;
+}
+
+
+@media(max-width: 1300px){
+  .panel.active{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 1023px){
+  #quickscan-form.active {
+    flex-direction: column;
+  }
+  #quickscan-sidebar {
+    max-width: 100%;
+  }
+  #quickscan-main {
+    max-width: 100%;
+    width: 100%;
+  }
+  .panel.active{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media(max-width: 850px){
+  .panel.active{
+    grid-template-columns: 1fr;
+  }
+  #quickscan-sidebar .main-content{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #quickscan-main {
+    padding-left: 0px;
+    max-width: 100%;
+  }
+  #quickscan-form.flex {
+    padding: 0;
+    max-width: calc(100vw - 20px);
+  }
+}
